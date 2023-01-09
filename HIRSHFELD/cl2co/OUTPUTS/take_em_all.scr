@@ -1,0 +1,189 @@
+#!/bin/bash
+##################################################################################
+# PLACZEK code was developed by L.N. Vidal for computing Raman spectra. At that  #
+# time, as a collaboration, Prof. Vidal wrote a section to compute CCTDP values  #
+# from QTAIM atomic charges and dipoles from Morphy98. Placzek will run all the  #
+# required calculations and write a file called MP2-EDIPOL (or QCISD-EDIPOL,     #
+# but with same content), with all charges and atomic dipoles for each of the    #
+# displaced geometries. Later, other charge models came to our interest but      #
+# Placzek was not updated to handle all of them. We actually write 'externally'  #
+# another MP2-EDIPOL and give it to Placzek, in the same format as he was        #
+# reading QTAIM's data but using data from other models, because Placzek will    #
+# not notice the difference. All internal calculations are only numerical two-   #
+# point derivatives. With this script, we manage to give to Placzek the required #
+# data from any charge model we want. Let's take methane as an example:          #
+#                                                                                #
+  n=4                            # Insert here the number of atoms.              #
+  A="O_1 C_2 Cl_3 Cl_4"        # Insert here the respective atomic labels.     #
+  B="+X -X +Y -Y +Z -Z"          # Cartesian Directions (do not modify this).    #
+#                                                                                #
+##################################################################################
+# Defining the vector with the displacements.
+
+ echo "EQ-GEOM" > file1
+
+ for a in $A
+ do
+  for b in $B
+   do
+    echo "$b$a" >> file1
+   done
+  done
+
+ L=`cat file1`
+ rm file1
+
+################################################
+# ENGL: Obtaining the atomic charges and atomic dipoles.
+
+ let p1=($n+1)
+ let p2=($n+2)
+ let p3=($n+3)
+
+  file='EDIPOL'         # 'EDIPOL' or 'GAUSSIAN.com' depends on wheter the Hirshfeld or QTAIM charges were
+# file='GAUSSIAN.log'   # originally informed informed to Placzek. This does not affect the final results.
+
+ mv $file $file\EQ-GEOM
+
+ for l in $L
+ do
+
+#######################################################################################################################################	 
+# ATOMIC CHARGES (SEE THE LABELS AT THE END)
+# Please uncomment the charge model you choose:
+
+# grep -B$n  "Sum of Mulliken atomic charges"       $file$l    |  head -n$n  |  cut -c13-21   >>  MM    #     Mulliken
+# grep -B$n  "Sum of MBS Mulliken atomic charges"   $file$l    |  head -n$n  |  cut -c13-21   >>  MM    # MBS Mulliken
+# grep -A$p2 "Charges from ESP fit, "               $file$l    |  tail -n$n  |  cut -c13-21   >>  MM    # Chelpg without atomdip G09
+# grep -A$p3 "Charges from ESP fit, "               $file$l    |  tail -n$n  |  cut -c13-21   >>  MM    # Chelpg with    atomdip G09
+# grep -A$p2 "Charges from ESP fit, "               $file$l    |  tail -n$n  |  cut -c13-21   >>  MM    # Chelpg with    atomdip G16
+# grep -A$p1 "Atom No    Charge"                    $file$l    |  tail -n$n  |  cut -c12-19   >>  MM    # NPA            from G09
+# grep -A$p1 "Atom  No    Charge"                   $file$l    |  tail -n$n  |  cut -c16-23   >>  MM    # NPA            from G16
+# grep -A$p1 "Hirshfeld spin densities"             $file$l    |  tail -n$n  |  cut -c24-32   >>  MM    # Hirshfeld      from G09
+  grep -A$p1 "Hirshfeld charges,"                   $file$l    |  tail -n$n  |  cut -c13-21   >>  MM    # Hirshfeld      from G16
+# grep -A$n  "net_charge"                           w$l.sum    |  tail -n$n  |  cut -c52-60   >>  MM    # DDEC6 charges  from Chargemol
+# grep -A$n  "Summary of CM5 charges"               w$l.cm5    |  tail -n$n  |  cut -c30-38   >>  MM    # CM5  charges   from MultiWFN
+# grep -A$n  "Final atomic charges"                 w$l.vdd    |  tail -n$n  |  cut -c20-30   >>  MM    # VDD (Voronoi)  from MultiWFN
+# grep -A$n  "Final atomic charges"                 w$l.adch   |  tail -n$n  |  cut -c20-30   >>  MM    # ADCH charges   from MultiWFN
+# grep -A$n  "Center       Charge"                  w$l.chelpg |  tail -n$n  |  cut -c13-25   >>  MM    # CHelpG-q-only  from MultiWFN
+
+#######################################################################################################################################
+# ATOMIC DIPOLES (SEE THE LABELS)
+# Please uncomment the charge model you choose:
+
+# CHELPG atomic dipoles from Gaussian09
+# grep -A$p3 "Charges from ESP fit, "    $file$l  |  tail -n$n  |  cut -c24-32   >>  MX
+# grep -A$p3 "Charges from ESP fit, "    $file$l  |  tail -n$n  |  cut -c35-43   >>  MY
+# grep -A$p3 "Charges from ESP fit, "    $file$l  |  tail -n$n  |  cut -c46-54   >>  MZ
+
+# CHELPG atomic dipoles from Gaussian16
+# grep -A$p2 "Charges from ESP fit, "    $file$l  |  tail -n$n  |  cut -c24-32   >>  MX
+# grep -A$p2 "Charges from ESP fit, "    $file$l  |  tail -n$n  |  cut -c35-43   >>  MY
+# grep -A$p2 "Charges from ESP fit, "    $file$l  |  tail -n$n  |  cut -c46-54   >>  MZ
+
+# Hirshfeld atomic dipoles from Gaussian09
+# grep -A$p1 "Hirshfeld spin densities"  $file$l  |  tail -n$n  |  cut -c35-43   >>  MX
+# grep -A$p1 "Hirshfeld spin densities"  $file$l  |  tail -n$n  |  cut -c46-54   >>  MY
+# grep -A$p1 "Hirshfeld spin densities"  $file$l  |  tail -n$n  |  cut -c57-65   >>  MZ
+
+# Hirshfeld atomic dipoles from Gaussian16
+  grep -A$p1 "Hirshfeld charges,"        $file$l  |  tail -n$n  |  cut -c35-43   >>  MX
+  grep -A$p1 "Hirshfeld charges,"        $file$l  |  tail -n$n  |  cut -c46-54   >>  MY
+  grep -A$p1 "Hirshfeld charges,"        $file$l  |  tail -n$n  |  cut -c57-65   >>  MZ
+
+# DDEC6 atomic dipoles from CHARGEMOL program (Thomas A. Manz Group)
+# grep -A$n  "net_charge"               w$l.sum   |  tail -n$n  |  cut -c65-73   >>  MX
+# grep -A$n  "net_charge"               w$l.sum   |  tail -n$n  |  cut -c78-86   >>  MY
+# grep -A$n  "net_charge"               w$l.sum   |  tail -n$n  |  cut -c91-99   >>  MZ
+
+ done
+
+##########################################################################################
+
+# In case of using any charge-only model (either CHELPG-q, CM5, ADCH, Mulliken, MBS, etc.),
+# we will inform atomic dipoles anyway, but as 'zeroes'. Therefore the same Placzek code
+# may be used, even though any section with data concerning atomic dipoles will be zero.
+
+# for l in $L
+# do
+#	  for s in $(seq 1 $n)
+#          do
+#		  echo "0.000000" >> MX
+#		  echo "0.000000" >> MY
+#                 echo "0.000000" >> MZ
+#	  done
+#  done
+
+##########################################################################################
+#                                                                                        #
+# Now, execute the program given in read.f90 code; it will read MM, MX, My and MZ files  #
+# and write an EDIPOL file that can replace MP2-EDIPOL in the original directory. By     #
+# executing Placzek on this MP2-EDIPOL / GAUSSIAN.com / HESSIAN / PLACZEK.INP set of     #
+# files, the PLACZEK.OUT file will be generated, containing all data we present here.    #
+#                                                                                        #
+##########################################################################################
+
+#
+#program translate
+#! Program to read atomic charges and atomic dipoles and write an externa EDIPOL file,
+# to be used along PLACZEK to obtain CCT or CCTDP partitions of intensities, AC/DC atomic
+# analysis of intensities or GAPT charges partitioned from various charge models.
+#
+# implicit none
+#
+# integer :: n, i, j, desl
+# real(8) :: mm, mx, my, mz
+#
+# print*, "Insert the number of atoms.:"
+# read(*,*) n
+#
+# open(unit=1,file='MM',status='old')
+# open(unit=2,file='MX',status='old')
+# open(unit=3,file='MY',status='old')
+# open(unit=4,file='MZ',status='old')
+# open(unit=5,file='EDIPOL',status='unknown')
+#
+# desl=(n*6)
+#
+# write(unit=5,fmt='(" DQ =    0.100000E-01 ANGS",2/,"EDIPOL-EQ-GEOM",/)')
+#
+#! Geometria de equilíbrio:
+#
+# do j=1, n
+#
+# read(unit=1,fmt='(E17.11)') mm
+# read(unit=2,fmt='(E17.11)') mx
+# read(unit=3,fmt='(E17.11)') my
+# read(unit=4,fmt='(E17.11)') mz
+#
+#
+#
+# write(unit=5,fmt='(" ATOM    ",I2,/," ATOMIC CHARGE =",14X,F15.12,/,&
+#             &" ATOMIC DIPOLE MOMENT=",8X,F15.12,6X,F15.12,6X,F15.12,/)')&
+#             & j, mm, mx, my, mz
+#
+# end do
+#
+#! Geometrias deslocadas:
+#
+# do i=1, desl
+#
+# write(unit=5,fmt='("EDIPOL-",/)')
+#
+# do j=1, n
+#
+# read(unit=1,fmt='(E17.11)') mm
+# read(unit=2,fmt='(E17.11)') mx
+# read(unit=3,fmt='(E17.11)') my
+# read(unit=4,fmt='(E17.11)') mz
+#
+# write(unit=5,fmt='(" ATOM    ",I2,/," MONOPOLE MOMENT =",7X,F15.12,/," DIPOLE   MOMENT ="&
+#                    &,7X,F15.12,6X,F15.12,6X,F15.12,/)') j, mm, mx, my, mz
+#
+#
+# end do
+# end do
+#
+#end program
+#
+

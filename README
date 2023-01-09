@@ -1,0 +1,1031 @@
+==================================================================================================
+This directory contains input and output files used to produce the results presented in the paper:
+"Characteristic substituent effect model for the infrared intensities of the X2CY (X=H, F, Cl, Br;
+Y=O, S) molecules." by Roy E. Bruns, Leonardo J. Duarte and Wagner E. Richter.
+==================================================================================================
+The directory structure is as follows:
+
+ycx2/
+├── HIRSHFELD [Data generated using hirshfeld population analysis]
+│   ├── b2co [files for the br2co molecules] 
+│   │   ├── GAUSSIAN.com [equilibrium geometry at QCISD/aug-cc-pVTZ level of theory]
+│   │   ├── HESSIAN [GAUSSIAN vibrational analysis]
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOLEQ-GEOM [GAUSSIAN output for the equilibrium geometry]
+│   │   │   ├── EDIPOL-XBr_2  [GAUSSIAN output for the geometry where the Br2 atom was displaced 
+                               0.01A in the X negative direction] 
+│   │   │   ├── EDIPOL+XBr_2
+│   │   │   ├── EDIPOL-XBr_3
+│   │   │   ├── EDIPOL+XBr_3
+│   │   │   ├── EDIPOL-XC_1
+│   │   │   ├── EDIPOL+XC_1
+│   │   │   ├── EDIPOL-XO_4
+│   │   │   ├── EDIPOL+XO_4
+│   │   │   ├── EDIPOL-YBr_2
+│   │   │   ├── EDIPOL+YBr_2
+│   │   │   ├── EDIPOL-YBr_3
+│   │   │   ├── EDIPOL+YBr_3
+│   │   │   ├── EDIPOL-YC_1
+│   │   │   ├── EDIPOL+YC_1
+│   │   │   ├── EDIPOL-YO_4
+│   │   │   ├── EDIPOL+YO_4
+│   │   │   ├── EDIPOL-ZBr_2
+│   │   │   ├── EDIPOL+ZBr_2
+│   │   │   ├── EDIPOL-ZBr_3
+│   │   │   ├── EDIPOL+ZBr_3
+│   │   │   ├── EDIPOL-ZC_1
+│   │   │   ├── EDIPOL+ZC_1
+│   │   │   ├── EDIPOL-ZO_4
+│   │   │   ├── EDIPOL+ZO_4
+│   │   │   ├── MM
+│   │   │   ├── MX
+│   │   │   ├── MY
+│   │   │   ├── MZ
+│   │   │   └── take_em_all.scr
+│   │   ├── PLACZEK.INP 
+│   │   ├── PLACZEK.OUT [Summary of the CCTDP analysis]
+│   │   ├── PLACZEK.RST 
+│   │   ├── QCISD-EDIPOL [Contains all APT elements] 
+│   │   └── sum-terms.dat [APT elements partitioned into atomic contributions]
+│   ├── br2cs
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XBr_3
+│   │   │   ├── EDIPOL+XBr_3
+│   │   │   ├── EDIPOL-XBr_4
+│   │   │   ├── EDIPOL+XBr_4
+│   │   │   ├── EDIPOL-XC_1
+│   │   │   ├── EDIPOL+XC_1
+│   │   │   ├── EDIPOL-XS_2
+│   │   │   ├── EDIPOL+XS_2
+│   │   │   ├── EDIPOL-YBr_3
+│   │   │   ├── EDIPOL+YBr_3
+│   │   │   ├── EDIPOL-YBr_4
+│   │   │   ├── EDIPOL+YBr_4
+│   │   │   ├── EDIPOL-YC_1
+│   │   │   ├── EDIPOL+YC_1
+│   │   │   ├── EDIPOL-YS_2
+│   │   │   ├── EDIPOL+YS_2
+│   │   │   ├── EDIPOL-ZBr_3
+│   │   │   ├── EDIPOL+ZBr_3
+│   │   │   ├── EDIPOL-ZBr_4
+│   │   │   ├── EDIPOL+ZBr_4
+│   │   │   ├── EDIPOL-ZC_1
+│   │   │   ├── EDIPOL+ZC_1
+│   │   │   ├── EDIPOL-ZS_2
+│   │   │   ├── EDIPOL+ZS_2
+│   │   │   └── take_em_all.scr
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   └── PLACZEK.RST
+│   ├── cl2co
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOLEQ-GEOM
+│   │   │   ├── EDIPOL-XC_2
+│   │   │   ├── EDIPOL+XC_2
+│   │   │   ├── EDIPOL-XCl_3
+│   │   │   ├── EDIPOL+XCl_3
+│   │   │   ├── EDIPOL-XCl_4
+│   │   │   ├── EDIPOL+XCl_4
+│   │   │   ├── EDIPOL-XO_1
+│   │   │   ├── EDIPOL+XO_1
+│   │   │   ├── EDIPOL-YC_2
+│   │   │   ├── EDIPOL+YC_2
+│   │   │   ├── EDIPOL-YCl_3
+│   │   │   ├── EDIPOL+YCl_3
+│   │   │   ├── EDIPOL-YCl_4
+│   │   │   ├── EDIPOL+YCl_4
+│   │   │   ├── EDIPOL-YO_1
+│   │   │   ├── EDIPOL+YO_1
+│   │   │   ├── EDIPOL-ZC_2
+│   │   │   ├── EDIPOL+ZC_2
+│   │   │   ├── EDIPOL-ZCl_3
+│   │   │   ├── EDIPOL+ZCl_3
+│   │   │   ├── EDIPOL-ZCl_4
+│   │   │   ├── EDIPOL+ZCl_4
+│   │   │   ├── EDIPOL-ZO_1
+│   │   │   ├── EDIPOL+ZO_1
+│   │   │   ├── MM
+│   │   │   ├── MX
+│   │   │   ├── MY
+│   │   │   ├── MZ
+│   │   │   └── take_em_all.scr
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── cl2cs
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOLEQ-GEOM
+│   │   │   ├── EDIPOL-XC_1
+│   │   │   ├── EDIPOL+XC_1
+│   │   │   ├── EDIPOL-XCl_2
+│   │   │   ├── EDIPOL+XCl_2
+│   │   │   ├── EDIPOL-XCl_3
+│   │   │   ├── EDIPOL+XCl_3
+│   │   │   ├── EDIPOL-XS_4
+│   │   │   ├── EDIPOL+XS_4
+│   │   │   ├── EDIPOL-YC_1
+│   │   │   ├── EDIPOL+YC_1
+│   │   │   ├── EDIPOL-YCl_2
+│   │   │   ├── EDIPOL+YCl_2
+│   │   │   ├── EDIPOL-YCl_3
+│   │   │   ├── EDIPOL+YCl_3
+│   │   │   ├── EDIPOL-YS_4
+│   │   │   ├── EDIPOL+YS_4
+│   │   │   ├── EDIPOL-ZC_1
+│   │   │   ├── EDIPOL+ZC_1
+│   │   │   ├── EDIPOL-ZCl_2
+│   │   │   ├── EDIPOL+ZCl_2
+│   │   │   ├── EDIPOL-ZCl_3
+│   │   │   ├── EDIPOL+ZCl_3
+│   │   │   ├── EDIPOL-ZS_4
+│   │   │   ├── EDIPOL+ZS_4
+│   │   │   ├── MM
+│   │   │   ├── MX
+│   │   │   ├── MY
+│   │   │   ├── MZ
+│   │   │   └── take_em_all.scr
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── f2co
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOLEQ-GEOM
+│   │   │   ├── EDIPOL-XC_2
+│   │   │   ├── EDIPOL+XC_2
+│   │   │   ├── EDIPOL-XF_3
+│   │   │   ├── EDIPOL+XF_3
+│   │   │   ├── EDIPOL-XF_4
+│   │   │   ├── EDIPOL+XF_4
+│   │   │   ├── EDIPOL-XO_1
+│   │   │   ├── EDIPOL+XO_1
+│   │   │   ├── EDIPOL-YC_2
+│   │   │   ├── EDIPOL+YC_2
+│   │   │   ├── EDIPOL-YF_3
+│   │   │   ├── EDIPOL+YF_3
+│   │   │   ├── EDIPOL-YF_4
+│   │   │   ├── EDIPOL+YF_4
+│   │   │   ├── EDIPOL-YO_1
+│   │   │   ├── EDIPOL+YO_1
+│   │   │   ├── EDIPOL-ZC_2
+│   │   │   ├── EDIPOL+ZC_2
+│   │   │   ├── EDIPOL-ZF_3
+│   │   │   ├── EDIPOL+ZF_3
+│   │   │   ├── EDIPOL-ZF_4
+│   │   │   ├── EDIPOL+ZF_4
+│   │   │   ├── EDIPOL-ZO_1
+│   │   │   ├── EDIPOL+ZO_1
+│   │   │   ├── MM
+│   │   │   ├── MX
+│   │   │   ├── MY
+│   │   │   ├── MZ
+│   │   │   └── take_em_all.scr
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── f2cs
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XC_1
+│   │   │   ├── EDIPOL+XC_1
+│   │   │   ├── EDIPOL-XF_3
+│   │   │   ├── EDIPOL+XF_3
+│   │   │   ├── EDIPOL-XF_4
+│   │   │   ├── EDIPOL+XF_4
+│   │   │   ├── EDIPOL-XS_2
+│   │   │   ├── EDIPOL+XS_2
+│   │   │   ├── EDIPOL-YC_1
+│   │   │   ├── EDIPOL+YC_1
+│   │   │   ├── EDIPOL-YF_3
+│   │   │   ├── EDIPOL+YF_3
+│   │   │   ├── EDIPOL-YF_4
+│   │   │   ├── EDIPOL+YF_4
+│   │   │   ├── EDIPOL-YS_2
+│   │   │   ├── EDIPOL+YS_2
+│   │   │   ├── EDIPOL-ZC_1
+│   │   │   ├── EDIPOL+ZC_1
+│   │   │   ├── EDIPOL-ZF_3
+│   │   │   ├── EDIPOL+ZF_3
+│   │   │   ├── EDIPOL-ZF_4
+│   │   │   ├── EDIPOL+ZF_4
+│   │   │   ├── EDIPOL-ZS_2
+│   │   │   ├── EDIPOL+ZS_2
+│   │   │   └── take_em_all.scr
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   └── PLACZEK.RST
+│   ├── h2co
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOLEQ-GEOM
+│   │   │   ├── EDIPOL-XC_2
+│   │   │   ├── EDIPOL+XC_2
+│   │   │   ├── EDIPOL-XH_3
+│   │   │   ├── EDIPOL+XH_3
+│   │   │   ├── EDIPOL-XH_4
+│   │   │   ├── EDIPOL+XH_4
+│   │   │   ├── EDIPOL-XO_1
+│   │   │   ├── EDIPOL+XO_1
+│   │   │   ├── EDIPOL-YC_2
+│   │   │   ├── EDIPOL+YC_2
+│   │   │   ├── EDIPOL-YH_3
+│   │   │   ├── EDIPOL+YH_3
+│   │   │   ├── EDIPOL-YH_4
+│   │   │   ├── EDIPOL+YH_4
+│   │   │   ├── EDIPOL-YO_1
+│   │   │   ├── EDIPOL+YO_1
+│   │   │   ├── EDIPOL-ZC_2
+│   │   │   ├── EDIPOL+ZC_2
+│   │   │   ├── EDIPOL-ZH_3
+│   │   │   ├── EDIPOL+ZH_3
+│   │   │   ├── EDIPOL-ZH_4
+│   │   │   ├── EDIPOL+ZH_4
+│   │   │   ├── EDIPOL-ZO_1
+│   │   │   ├── EDIPOL+ZO_1
+│   │   │   ├── MM
+│   │   │   ├── MX
+│   │   │   ├── MY
+│   │   │   ├── MZ
+│   │   │   └── take_em_all.scr
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   └── h2cs
+│       ├── GAUSSIAN.com
+│       ├── HESSIAN
+│       ├── OUTPUTS
+│       │   ├── EDIPOLEQ-GEOM
+│       │   ├── EDIPOL-XC_1
+│       │   ├── EDIPOL+XC_1
+│       │   ├── EDIPOL-XH_3
+│       │   ├── EDIPOL+XH_3
+│       │   ├── EDIPOL-XH_4
+│       │   ├── EDIPOL+XH_4
+│       │   ├── EDIPOL-XS_2
+│       │   ├── EDIPOL+XS_2
+│       │   ├── EDIPOL-YC_1
+│       │   ├── EDIPOL+YC_1
+│       │   ├── EDIPOL-YH_3
+│       │   ├── EDIPOL+YH_3
+│       │   ├── EDIPOL-YH_4
+│       │   ├── EDIPOL+YH_4
+│       │   ├── EDIPOL-YS_2
+│       │   ├── EDIPOL+YS_2
+│       │   ├── EDIPOL-ZC_1
+│       │   ├── EDIPOL+ZC_1
+│       │   ├── EDIPOL-ZH_3
+│       │   ├── EDIPOL+ZH_3
+│       │   ├── EDIPOL-ZH_4
+│       │   ├── EDIPOL+ZH_4
+│       │   ├── EDIPOL-ZS_2
+│       │   ├── EDIPOL+ZS_2
+│       │   ├── MM
+│       │   ├── MX
+│       │   ├── MY
+│       │   ├── MZ
+│       │   └── take_em_all.scr
+│       ├── PLACZEK.INP
+│       ├── PLACZEK.OUT
+│       ├── PLACZEK.RST
+│       ├── QCISD-EDIPOL
+│       └── sum-terms.dat
+├── QTAIM [Data generated using AIM charges]
+│   ├── br2co
+│   │   ├── br2co.com [non-optmized geometry]
+│   │   ├── br2co-fv.com [GAUSSIAN input for vibrational analysis]
+│   │   ├── br2co-fv.log [GAUSSIAN output for vibrational analysis]
+│   │   ├── br2co-opt.com
+│   │   ├── br2co-opt.log
+│   │   ├── GAUSSIAN.com [optmized geometry]
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XBr_2
+│   │   │   ├── EDIPOL+XBr_2
+│   │   │   ├── EDIPOL-XBr_3
+│   │   │   ├── EDIPOL+XBr_3
+│   │   │   ├── EDIPOL-XC_1
+│   │   │   ├── EDIPOL+XC_1
+│   │   │   ├── EDIPOL-XO_4
+│   │   │   ├── EDIPOL+XO_4
+│   │   │   ├── EDIPOL-YBr_2
+│   │   │   ├── EDIPOL+YBr_2
+│   │   │   ├── EDIPOL-YBr_3
+│   │   │   ├── EDIPOL+YBr_3
+│   │   │   ├── EDIPOL-YC_1
+│   │   │   ├── EDIPOL+YC_1
+│   │   │   ├── EDIPOL-YO_4
+│   │   │   ├── EDIPOL+YO_4
+│   │   │   ├── EDIPOL-ZBr_2
+│   │   │   ├── EDIPOL+ZBr_2
+│   │   │   ├── EDIPOL-ZBr_3
+│   │   │   ├── EDIPOL+ZBr_3
+│   │   │   ├── EDIPOL-ZC_1
+│   │   │   ├── EDIPOL+ZC_1
+│   │   │   ├── EDIPOL-ZO_4
+│   │   │   ├── EDIPOL+ZO_4
+│   │   │   ├── GAUSSIAN.log
+│   │   │   ├── GAUSSIAN.log-XBr_2
+│   │   │   ├── GAUSSIAN.log+XBr_2
+│   │   │   ├── GAUSSIAN.log-XBr_3
+│   │   │   ├── GAUSSIAN.log+XBr_3
+│   │   │   ├── GAUSSIAN.log-XC_1
+│   │   │   ├── GAUSSIAN.log+XC_1
+│   │   │   ├── GAUSSIAN.log-XO_4
+│   │   │   ├── GAUSSIAN.log+XO_4
+│   │   │   ├── GAUSSIAN.log-YBr_2
+│   │   │   ├── GAUSSIAN.log+YBr_2
+│   │   │   ├── GAUSSIAN.log-YBr_3
+│   │   │   ├── GAUSSIAN.log+YBr_3
+│   │   │   ├── GAUSSIAN.log-YC_1
+│   │   │   ├── GAUSSIAN.log+YC_1
+│   │   │   ├── GAUSSIAN.log-YO_4
+│   │   │   ├── GAUSSIAN.log+YO_4
+│   │   │   ├── GAUSSIAN.log-ZBr_2
+│   │   │   ├── GAUSSIAN.log+ZBr_2
+│   │   │   ├── GAUSSIAN.log-ZBr_3
+│   │   │   ├── GAUSSIAN.log+ZBr_3
+│   │   │   ├── GAUSSIAN.log-ZC_1
+│   │   │   ├── GAUSSIAN.log+ZC_1
+│   │   │   ├── GAUSSIAN.log-ZO_4
+│   │   │   ├── GAUSSIAN.log+ZO_4
+│   │   │   ├── GAUSSIAN.wfn
+│   │   │   ├── GAUSSIAN.wfn-XBr_2
+│   │   │   ├── GAUSSIAN.wfn+XBr_2
+│   │   │   ├── GAUSSIAN.wfn-XBr_3
+│   │   │   ├── GAUSSIAN.wfn+XBr_3
+│   │   │   ├── GAUSSIAN.wfn-XC_1
+│   │   │   ├── GAUSSIAN.wfn+XC_1
+│   │   │   ├── GAUSSIAN.wfn-XO_4
+│   │   │   ├── GAUSSIAN.wfn+XO_4
+│   │   │   ├── GAUSSIAN.wfn-YBr_2
+│   │   │   ├── GAUSSIAN.wfn+YBr_2
+│   │   │   ├── GAUSSIAN.wfn-YBr_3
+│   │   │   ├── GAUSSIAN.wfn+YBr_3
+│   │   │   ├── GAUSSIAN.wfn-YC_1
+│   │   │   ├── GAUSSIAN.wfn+YC_1
+│   │   │   ├── GAUSSIAN.wfn-YO_4
+│   │   │   ├── GAUSSIAN.wfn+YO_4
+│   │   │   ├── GAUSSIAN.wfn-ZBr_2
+│   │   │   ├── GAUSSIAN.wfn+ZBr_2
+│   │   │   ├── GAUSSIAN.wfn-ZBr_3
+│   │   │   ├── GAUSSIAN.wfn+ZBr_3
+│   │   │   ├── GAUSSIAN.wfn-ZC_1
+│   │   │   ├── GAUSSIAN.wfn+ZC_1
+│   │   │   ├── GAUSSIAN.wfn-ZO_4
+│   │   │   └── GAUSSIAN.wfn+ZO_4
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── br2cs
+│   │   ├── br2cs.com
+│   │   ├── br2cs-fv.com
+│   │   ├── br2cs-fv.log
+│   │   ├── br2cs-opt.com
+│   │   ├── br2cs-opt.log
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XBr_3
+│   │   │   ├── EDIPOL+XBr_3
+│   │   │   ├── EDIPOL-XBr_4
+│   │   │   ├── EDIPOL+XBr_4
+│   │   │   ├── EDIPOL-XC_1
+│   │   │   ├── EDIPOL+XC_1
+│   │   │   ├── EDIPOL-XS_2
+│   │   │   ├── EDIPOL+XS_2
+│   │   │   ├── EDIPOL-YBr_3
+│   │   │   ├── EDIPOL+YBr_3
+│   │   │   ├── EDIPOL-YBr_4
+│   │   │   ├── EDIPOL+YBr_4
+│   │   │   ├── EDIPOL-YC_1
+│   │   │   ├── EDIPOL+YC_1
+│   │   │   ├── EDIPOL-YS_2
+│   │   │   ├── EDIPOL+YS_2
+│   │   │   ├── EDIPOL-ZBr_3
+│   │   │   ├── EDIPOL+ZBr_3
+│   │   │   ├── EDIPOL-ZBr_4
+│   │   │   ├── EDIPOL+ZBr_4
+│   │   │   ├── EDIPOL-ZC_1
+│   │   │   ├── EDIPOL+ZC_1
+│   │   │   ├── EDIPOL-ZS_2
+│   │   │   ├── EDIPOL+ZS_2
+│   │   │   ├── GAUSSIAN.log
+│   │   │   ├── GAUSSIAN.log-XBr_3
+│   │   │   ├── GAUSSIAN.log+XBr_3
+│   │   │   ├── GAUSSIAN.log-XBr_4
+│   │   │   ├── GAUSSIAN.log+XBr_4
+│   │   │   ├── GAUSSIAN.log-XC_1
+│   │   │   ├── GAUSSIAN.log+XC_1
+│   │   │   ├── GAUSSIAN.log-XS_2
+│   │   │   ├── GAUSSIAN.log+XS_2
+│   │   │   ├── GAUSSIAN.log-YBr_3
+│   │   │   ├── GAUSSIAN.log+YBr_3
+│   │   │   ├── GAUSSIAN.log-YBr_4
+│   │   │   ├── GAUSSIAN.log+YBr_4
+│   │   │   ├── GAUSSIAN.log-YC_1
+│   │   │   ├── GAUSSIAN.log+YC_1
+│   │   │   ├── GAUSSIAN.log-YS_2
+│   │   │   ├── GAUSSIAN.log+YS_2
+│   │   │   ├── GAUSSIAN.log-ZBr_3
+│   │   │   ├── GAUSSIAN.log+ZBr_3
+│   │   │   ├── GAUSSIAN.log-ZBr_4
+│   │   │   ├── GAUSSIAN.log+ZBr_4
+│   │   │   ├── GAUSSIAN.log-ZC_1
+│   │   │   ├── GAUSSIAN.log+ZC_1
+│   │   │   ├── GAUSSIAN.log-ZS_2
+│   │   │   ├── GAUSSIAN.log+ZS_2
+│   │   │   ├── GAUSSIAN.wfn
+│   │   │   ├── GAUSSIAN.wfn-XBr_3
+│   │   │   ├── GAUSSIAN.wfn+XBr_3
+│   │   │   ├── GAUSSIAN.wfn-XBr_4
+│   │   │   ├── GAUSSIAN.wfn+XBr_4
+│   │   │   ├── GAUSSIAN.wfn-XC_1
+│   │   │   ├── GAUSSIAN.wfn+XC_1
+│   │   │   ├── GAUSSIAN.wfn-XS_2
+│   │   │   ├── GAUSSIAN.wfn+XS_2
+│   │   │   ├── GAUSSIAN.wfn-YBr_3
+│   │   │   ├── GAUSSIAN.wfn+YBr_3
+│   │   │   ├── GAUSSIAN.wfn-YBr_4
+│   │   │   ├── GAUSSIAN.wfn+YBr_4
+│   │   │   ├── GAUSSIAN.wfn-YC_1
+│   │   │   ├── GAUSSIAN.wfn+YC_1
+│   │   │   ├── GAUSSIAN.wfn-YS_2
+│   │   │   ├── GAUSSIAN.wfn+YS_2
+│   │   │   ├── GAUSSIAN.wfn-ZBr_3
+│   │   │   ├── GAUSSIAN.wfn+ZBr_3
+│   │   │   ├── GAUSSIAN.wfn-ZBr_4
+│   │   │   ├── GAUSSIAN.wfn+ZBr_4
+│   │   │   ├── GAUSSIAN.wfn-ZC_1
+│   │   │   ├── GAUSSIAN.wfn+ZC_1
+│   │   │   ├── GAUSSIAN.wfn-ZS_2
+│   │   │   └── GAUSSIAN.wfn+ZS_2
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── cl2co
+│   │   ├── cl2co.com
+│   │   ├── cl2co-fv.com
+│   │   ├── cl2co-fv.log
+│   │   ├── cl2co-opt.com
+│   │   ├── cl2co-opt.log
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XC_2
+│   │   │   ├── EDIPOL+XC_2
+│   │   │   ├── EDIPOL-XCl_3
+│   │   │   ├── EDIPOL+XCl_3
+│   │   │   ├── EDIPOL-XCl_4
+│   │   │   ├── EDIPOL+XCl_4
+│   │   │   ├── EDIPOL-XO_1
+│   │   │   ├── EDIPOL+XO_1
+│   │   │   ├── EDIPOL-YC_2
+│   │   │   ├── EDIPOL+YC_2
+│   │   │   ├── EDIPOL-YCl_3
+│   │   │   ├── EDIPOL+YCl_3
+│   │   │   ├── EDIPOL-YCl_4
+│   │   │   ├── EDIPOL+YCl_4
+│   │   │   ├── EDIPOL-YO_1
+│   │   │   ├── EDIPOL+YO_1
+│   │   │   ├── EDIPOL-ZC_2
+│   │   │   ├── EDIPOL+ZC_2
+│   │   │   ├── EDIPOL-ZCl_3
+│   │   │   ├── EDIPOL+ZCl_3
+│   │   │   ├── EDIPOL-ZCl_4
+│   │   │   ├── EDIPOL+ZCl_4
+│   │   │   ├── EDIPOL-ZO_1
+│   │   │   ├── EDIPOL+ZO_1
+│   │   │   ├── GAUSSIAN.log
+│   │   │   ├── GAUSSIAN.log-XC_2
+│   │   │   ├── GAUSSIAN.log+XC_2
+│   │   │   ├── GAUSSIAN.log-XCl_3
+│   │   │   ├── GAUSSIAN.log+XCl_3
+│   │   │   ├── GAUSSIAN.log-XCl_4
+│   │   │   ├── GAUSSIAN.log+XCl_4
+│   │   │   ├── GAUSSIAN.log-XO_1
+│   │   │   ├── GAUSSIAN.log+XO_1
+│   │   │   ├── GAUSSIAN.log-YC_2
+│   │   │   ├── GAUSSIAN.log+YC_2
+│   │   │   ├── GAUSSIAN.log-YCl_3
+│   │   │   ├── GAUSSIAN.log+YCl_3
+│   │   │   ├── GAUSSIAN.log-YCl_4
+│   │   │   ├── GAUSSIAN.log+YCl_4
+│   │   │   ├── GAUSSIAN.log-YO_1
+│   │   │   ├── GAUSSIAN.log+YO_1
+│   │   │   ├── GAUSSIAN.log-ZC_2
+│   │   │   ├── GAUSSIAN.log+ZC_2
+│   │   │   ├── GAUSSIAN.log-ZCl_3
+│   │   │   ├── GAUSSIAN.log+ZCl_3
+│   │   │   ├── GAUSSIAN.log-ZCl_4
+│   │   │   ├── GAUSSIAN.log+ZCl_4
+│   │   │   ├── GAUSSIAN.log-ZO_1
+│   │   │   ├── GAUSSIAN.log+ZO_1
+│   │   │   ├── GAUSSIAN.wfn
+│   │   │   ├── GAUSSIAN.wfn-XC_2
+│   │   │   ├── GAUSSIAN.wfn+XC_2
+│   │   │   ├── GAUSSIAN.wfn-XCl_3
+│   │   │   ├── GAUSSIAN.wfn+XCl_3
+│   │   │   ├── GAUSSIAN.wfn-XCl_4
+│   │   │   ├── GAUSSIAN.wfn+XCl_4
+│   │   │   ├── GAUSSIAN.wfn-XO_1
+│   │   │   ├── GAUSSIAN.wfn+XO_1
+│   │   │   ├── GAUSSIAN.wfn-YC_2
+│   │   │   ├── GAUSSIAN.wfn+YC_2
+│   │   │   ├── GAUSSIAN.wfn-YCl_3
+│   │   │   ├── GAUSSIAN.wfn+YCl_3
+│   │   │   ├── GAUSSIAN.wfn-YCl_4
+│   │   │   ├── GAUSSIAN.wfn+YCl_4
+│   │   │   ├── GAUSSIAN.wfn-YO_1
+│   │   │   ├── GAUSSIAN.wfn+YO_1
+│   │   │   ├── GAUSSIAN.wfn-ZC_2
+│   │   │   ├── GAUSSIAN.wfn+ZC_2
+│   │   │   ├── GAUSSIAN.wfn-ZCl_3
+│   │   │   ├── GAUSSIAN.wfn+ZCl_3
+│   │   │   ├── GAUSSIAN.wfn-ZCl_4
+│   │   │   ├── GAUSSIAN.wfn+ZCl_4
+│   │   │   ├── GAUSSIAN.wfn-ZO_1
+│   │   │   └── GAUSSIAN.wfn+ZO_1
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── cl2cs
+│   │   ├── cl2cs.com
+│   │   ├── cl2cs-fv.com
+│   │   ├── cl2cs-fv.log
+│   │   ├── cl2cs-opt.com
+│   │   ├── cl2cs-opt.log
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XC_1
+│   │   │   ├── EDIPOL+XC_1
+│   │   │   ├── EDIPOL-XCl_2
+│   │   │   ├── EDIPOL+XCl_2
+│   │   │   ├── EDIPOL-XCl_3
+│   │   │   ├── EDIPOL+XCl_3
+│   │   │   ├── EDIPOL-XS_4
+│   │   │   ├── EDIPOL+XS_4
+│   │   │   ├── EDIPOL-YC_1
+│   │   │   ├── EDIPOL+YC_1
+│   │   │   ├── EDIPOL-YCl_2
+│   │   │   ├── EDIPOL+YCl_2
+│   │   │   ├── EDIPOL-YCl_3
+│   │   │   ├── EDIPOL+YCl_3
+│   │   │   ├── EDIPOL-YS_4
+│   │   │   ├── EDIPOL+YS_4
+│   │   │   ├── EDIPOL-ZC_1
+│   │   │   ├── EDIPOL+ZC_1
+│   │   │   ├── EDIPOL-ZCl_2
+│   │   │   ├── EDIPOL+ZCl_2
+│   │   │   ├── EDIPOL-ZCl_3
+│   │   │   ├── EDIPOL+ZCl_3
+│   │   │   ├── EDIPOL-ZS_4
+│   │   │   ├── EDIPOL+ZS_4
+│   │   │   ├── GAUSSIAN.log
+│   │   │   ├── GAUSSIAN.log-XC_1
+│   │   │   ├── GAUSSIAN.log+XC_1
+│   │   │   ├── GAUSSIAN.log-XCl_2
+│   │   │   ├── GAUSSIAN.log+XCl_2
+│   │   │   ├── GAUSSIAN.log-XCl_3
+│   │   │   ├── GAUSSIAN.log+XCl_3
+│   │   │   ├── GAUSSIAN.log-XS_4
+│   │   │   ├── GAUSSIAN.log+XS_4
+│   │   │   ├── GAUSSIAN.log-YC_1
+│   │   │   ├── GAUSSIAN.log+YC_1
+│   │   │   ├── GAUSSIAN.log-YCl_2
+│   │   │   ├── GAUSSIAN.log+YCl_2
+│   │   │   ├── GAUSSIAN.log-YCl_3
+│   │   │   ├── GAUSSIAN.log+YCl_3
+│   │   │   ├── GAUSSIAN.log-YS_4
+│   │   │   ├── GAUSSIAN.log+YS_4
+│   │   │   ├── GAUSSIAN.log-ZC_1
+│   │   │   ├── GAUSSIAN.log+ZC_1
+│   │   │   ├── GAUSSIAN.log-ZCl_2
+│   │   │   ├── GAUSSIAN.log+ZCl_2
+│   │   │   ├── GAUSSIAN.log-ZCl_3
+│   │   │   ├── GAUSSIAN.log+ZCl_3
+│   │   │   ├── GAUSSIAN.log-ZS_4
+│   │   │   ├── GAUSSIAN.log+ZS_4
+│   │   │   ├── GAUSSIAN.wfn
+│   │   │   ├── GAUSSIAN.wfn-XC_1
+│   │   │   ├── GAUSSIAN.wfn+XC_1
+│   │   │   ├── GAUSSIAN.wfn-XCl_2
+│   │   │   ├── GAUSSIAN.wfn+XCl_2
+│   │   │   ├── GAUSSIAN.wfn-XCl_3
+│   │   │   ├── GAUSSIAN.wfn+XCl_3
+│   │   │   ├── GAUSSIAN.wfn-XS_4
+│   │   │   ├── GAUSSIAN.wfn+XS_4
+│   │   │   ├── GAUSSIAN.wfn-YC_1
+│   │   │   ├── GAUSSIAN.wfn+YC_1
+│   │   │   ├── GAUSSIAN.wfn-YCl_2
+│   │   │   ├── GAUSSIAN.wfn+YCl_2
+│   │   │   ├── GAUSSIAN.wfn-YCl_3
+│   │   │   ├── GAUSSIAN.wfn+YCl_3
+│   │   │   ├── GAUSSIAN.wfn-YS_4
+│   │   │   ├── GAUSSIAN.wfn+YS_4
+│   │   │   ├── GAUSSIAN.wfn-ZC_1
+│   │   │   ├── GAUSSIAN.wfn+ZC_1
+│   │   │   ├── GAUSSIAN.wfn-ZCl_2
+│   │   │   ├── GAUSSIAN.wfn+ZCl_2
+│   │   │   ├── GAUSSIAN.wfn-ZCl_3
+│   │   │   ├── GAUSSIAN.wfn+ZCl_3
+│   │   │   ├── GAUSSIAN.wfn-ZS_4
+│   │   │   └── GAUSSIAN.wfn+ZS_4
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── f2co
+│   │   ├── f2co.com
+│   │   ├── f2co-fv.com
+│   │   ├── f2co-fv.log
+│   │   ├── f2co-opt.com
+│   │   ├── f2co-opt.log
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XC_2
+│   │   │   ├── EDIPOL+XC_2
+│   │   │   ├── EDIPOL-XF_3
+│   │   │   ├── EDIPOL+XF_3
+│   │   │   ├── EDIPOL-XF_4
+│   │   │   ├── EDIPOL+XF_4
+│   │   │   ├── EDIPOL-XO_1
+│   │   │   ├── EDIPOL+XO_1
+│   │   │   ├── EDIPOL-YC_2
+│   │   │   ├── EDIPOL+YC_2
+│   │   │   ├── EDIPOL-YF_3
+│   │   │   ├── EDIPOL+YF_3
+│   │   │   ├── EDIPOL-YF_4
+│   │   │   ├── EDIPOL+YF_4
+│   │   │   ├── EDIPOL-YO_1
+│   │   │   ├── EDIPOL+YO_1
+│   │   │   ├── EDIPOL-ZC_2
+│   │   │   ├── EDIPOL+ZC_2
+│   │   │   ├── EDIPOL-ZF_3
+│   │   │   ├── EDIPOL+ZF_3
+│   │   │   ├── EDIPOL-ZF_4
+│   │   │   ├── EDIPOL+ZF_4
+│   │   │   ├── EDIPOL-ZO_1
+│   │   │   ├── EDIPOL+ZO_1
+│   │   │   ├── GAUSSIAN.log
+│   │   │   ├── GAUSSIAN.log-XC_2
+│   │   │   ├── GAUSSIAN.log+XC_2
+│   │   │   ├── GAUSSIAN.log-XF_3
+│   │   │   ├── GAUSSIAN.log+XF_3
+│   │   │   ├── GAUSSIAN.log-XF_4
+│   │   │   ├── GAUSSIAN.log+XF_4
+│   │   │   ├── GAUSSIAN.log-XO_1
+│   │   │   ├── GAUSSIAN.log+XO_1
+│   │   │   ├── GAUSSIAN.log-YC_2
+│   │   │   ├── GAUSSIAN.log+YC_2
+│   │   │   ├── GAUSSIAN.log-YF_3
+│   │   │   ├── GAUSSIAN.log+YF_3
+│   │   │   ├── GAUSSIAN.log-YF_4
+│   │   │   ├── GAUSSIAN.log+YF_4
+│   │   │   ├── GAUSSIAN.log-YO_1
+│   │   │   ├── GAUSSIAN.log+YO_1
+│   │   │   ├── GAUSSIAN.log-ZC_2
+│   │   │   ├── GAUSSIAN.log+ZC_2
+│   │   │   ├── GAUSSIAN.log-ZF_3
+│   │   │   ├── GAUSSIAN.log+ZF_3
+│   │   │   ├── GAUSSIAN.log-ZF_4
+│   │   │   ├── GAUSSIAN.log+ZF_4
+│   │   │   ├── GAUSSIAN.log-ZO_1
+│   │   │   ├── GAUSSIAN.log+ZO_1
+│   │   │   ├── GAUSSIAN.wfn
+│   │   │   ├── GAUSSIAN.wfn-XC_2
+│   │   │   ├── GAUSSIAN.wfn+XC_2
+│   │   │   ├── GAUSSIAN.wfn-XF_3
+│   │   │   ├── GAUSSIAN.wfn+XF_3
+│   │   │   ├── GAUSSIAN.wfn-XF_4
+│   │   │   ├── GAUSSIAN.wfn+XF_4
+│   │   │   ├── GAUSSIAN.wfn-XO_1
+│   │   │   ├── GAUSSIAN.wfn+XO_1
+│   │   │   ├── GAUSSIAN.wfn-YC_2
+│   │   │   ├── GAUSSIAN.wfn+YC_2
+│   │   │   ├── GAUSSIAN.wfn-YF_3
+│   │   │   ├── GAUSSIAN.wfn+YF_3
+│   │   │   ├── GAUSSIAN.wfn-YF_4
+│   │   │   ├── GAUSSIAN.wfn+YF_4
+│   │   │   ├── GAUSSIAN.wfn-YO_1
+│   │   │   ├── GAUSSIAN.wfn+YO_1
+│   │   │   ├── GAUSSIAN.wfn-ZC_2
+│   │   │   ├── GAUSSIAN.wfn+ZC_2
+│   │   │   ├── GAUSSIAN.wfn-ZF_3
+│   │   │   ├── GAUSSIAN.wfn+ZF_3
+│   │   │   ├── GAUSSIAN.wfn-ZF_4
+│   │   │   ├── GAUSSIAN.wfn+ZF_4
+│   │   │   ├── GAUSSIAN.wfn-ZO_1
+│   │   │   └── GAUSSIAN.wfn+ZO_1
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── f2cs
+│   │   ├── f2cs.com
+│   │   ├── f2cs-fv.com
+│   │   ├── f2cs-fv.log
+│   │   ├── f2cs-opt.com
+│   │   ├── f2cs-opt.log
+│   │   ├── GAUSSIAN.com
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XC_1
+│   │   │   ├── EDIPOL+XC_1
+│   │   │   ├── EDIPOL-XF_3
+│   │   │   ├── EDIPOL+XF_3
+│   │   │   ├── EDIPOL-XF_4
+│   │   │   ├── EDIPOL+XF_4
+│   │   │   ├── EDIPOL-XS_2
+│   │   │   ├── EDIPOL+XS_2
+│   │   │   ├── EDIPOL-YC_1
+│   │   │   ├── EDIPOL+YC_1
+│   │   │   ├── EDIPOL-YF_3
+│   │   │   ├── EDIPOL+YF_3
+│   │   │   ├── EDIPOL-YF_4
+│   │   │   ├── EDIPOL+YF_4
+│   │   │   ├── EDIPOL-YS_2
+│   │   │   ├── EDIPOL+YS_2
+│   │   │   ├── EDIPOL-ZC_1
+│   │   │   ├── EDIPOL+ZC_1
+│   │   │   ├── EDIPOL-ZF_3
+│   │   │   ├── EDIPOL+ZF_3
+│   │   │   ├── EDIPOL-ZF_4
+│   │   │   ├── EDIPOL+ZF_4
+│   │   │   ├── EDIPOL-ZS_2
+│   │   │   ├── EDIPOL+ZS_2
+│   │   │   ├── GAUSSIAN.log
+│   │   │   ├── GAUSSIAN.log-XC_1
+│   │   │   ├── GAUSSIAN.log+XC_1
+│   │   │   ├── GAUSSIAN.log-XF_3
+│   │   │   ├── GAUSSIAN.log+XF_3
+│   │   │   ├── GAUSSIAN.log-XF_4
+│   │   │   ├── GAUSSIAN.log+XF_4
+│   │   │   ├── GAUSSIAN.log-XS_2
+│   │   │   ├── GAUSSIAN.log+XS_2
+│   │   │   ├── GAUSSIAN.log-YC_1
+│   │   │   ├── GAUSSIAN.log+YC_1
+│   │   │   ├── GAUSSIAN.log-YF_3
+│   │   │   ├── GAUSSIAN.log+YF_3
+│   │   │   ├── GAUSSIAN.log-YF_4
+│   │   │   ├── GAUSSIAN.log+YF_4
+│   │   │   ├── GAUSSIAN.log-YS_2
+│   │   │   ├── GAUSSIAN.log+YS_2
+│   │   │   ├── GAUSSIAN.log-ZC_1
+│   │   │   ├── GAUSSIAN.log+ZC_1
+│   │   │   ├── GAUSSIAN.log-ZF_3
+│   │   │   ├── GAUSSIAN.log+ZF_3
+│   │   │   ├── GAUSSIAN.log-ZF_4
+│   │   │   ├── GAUSSIAN.log+ZF_4
+│   │   │   ├── GAUSSIAN.log-ZS_2
+│   │   │   ├── GAUSSIAN.log+ZS_2
+│   │   │   ├── GAUSSIAN.wfn
+│   │   │   ├── GAUSSIAN.wfn-XC_1
+│   │   │   ├── GAUSSIAN.wfn+XC_1
+│   │   │   ├── GAUSSIAN.wfn-XF_3
+│   │   │   ├── GAUSSIAN.wfn+XF_3
+│   │   │   ├── GAUSSIAN.wfn-XF_4
+│   │   │   ├── GAUSSIAN.wfn+XF_4
+│   │   │   ├── GAUSSIAN.wfn-XS_2
+│   │   │   ├── GAUSSIAN.wfn+XS_2
+│   │   │   ├── GAUSSIAN.wfn-YC_1
+│   │   │   ├── GAUSSIAN.wfn+YC_1
+│   │   │   ├── GAUSSIAN.wfn-YF_3
+│   │   │   ├── GAUSSIAN.wfn+YF_3
+│   │   │   ├── GAUSSIAN.wfn-YF_4
+│   │   │   ├── GAUSSIAN.wfn+YF_4
+│   │   │   ├── GAUSSIAN.wfn-YS_2
+│   │   │   ├── GAUSSIAN.wfn+YS_2
+│   │   │   ├── GAUSSIAN.wfn-ZC_1
+│   │   │   ├── GAUSSIAN.wfn+ZC_1
+│   │   │   ├── GAUSSIAN.wfn-ZF_3
+│   │   │   ├── GAUSSIAN.wfn+ZF_3
+│   │   │   ├── GAUSSIAN.wfn-ZF_4
+│   │   │   ├── GAUSSIAN.wfn+ZF_4
+│   │   │   ├── GAUSSIAN.wfn-ZS_2
+│   │   │   └── GAUSSIAN.wfn+ZS_2
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   ├── h2co
+│   │   ├── GAUSSIAN.com
+│   │   ├── h2co.com
+│   │   ├── h2co-fv.com
+│   │   ├── h2co-fv.log
+│   │   ├── h2co-opt.com
+│   │   ├── h2co-opt.log
+│   │   ├── HESSIAN
+│   │   ├── OUTPUTS
+│   │   │   ├── EDIPOL
+│   │   │   ├── EDIPOL-XC_2
+│   │   │   ├── EDIPOL+XC_2
+│   │   │   ├── EDIPOL-XH_3
+│   │   │   ├── EDIPOL+XH_3
+│   │   │   ├── EDIPOL-XH_4
+│   │   │   ├── EDIPOL+XH_4
+│   │   │   ├── EDIPOL-XO_1
+│   │   │   ├── EDIPOL+XO_1
+│   │   │   ├── EDIPOL-YC_2
+│   │   │   ├── EDIPOL+YC_2
+│   │   │   ├── EDIPOL-YH_3
+│   │   │   ├── EDIPOL+YH_3
+│   │   │   ├── EDIPOL-YH_4
+│   │   │   ├── EDIPOL+YH_4
+│   │   │   ├── EDIPOL-YO_1
+│   │   │   ├── EDIPOL+YO_1
+│   │   │   ├── EDIPOL-ZC_2
+│   │   │   ├── EDIPOL+ZC_2
+│   │   │   ├── EDIPOL-ZH_3
+│   │   │   ├── EDIPOL+ZH_3
+│   │   │   ├── EDIPOL-ZH_4
+│   │   │   ├── EDIPOL+ZH_4
+│   │   │   ├── EDIPOL-ZO_1
+│   │   │   ├── EDIPOL+ZO_1
+│   │   │   ├── GAUSSIAN.log
+│   │   │   ├── GAUSSIAN.log-XC_2
+│   │   │   ├── GAUSSIAN.log+XC_2
+│   │   │   ├── GAUSSIAN.log-XH_3
+│   │   │   ├── GAUSSIAN.log+XH_3
+│   │   │   ├── GAUSSIAN.log-XH_4
+│   │   │   ├── GAUSSIAN.log+XH_4
+│   │   │   ├── GAUSSIAN.log-XO_1
+│   │   │   ├── GAUSSIAN.log+XO_1
+│   │   │   ├── GAUSSIAN.log-YC_2
+│   │   │   ├── GAUSSIAN.log+YC_2
+│   │   │   ├── GAUSSIAN.log-YH_3
+│   │   │   ├── GAUSSIAN.log+YH_3
+│   │   │   ├── GAUSSIAN.log-YH_4
+│   │   │   ├── GAUSSIAN.log+YH_4
+│   │   │   ├── GAUSSIAN.log-YO_1
+│   │   │   ├── GAUSSIAN.log+YO_1
+│   │   │   ├── GAUSSIAN.log-ZC_2
+│   │   │   ├── GAUSSIAN.log+ZC_2
+│   │   │   ├── GAUSSIAN.log-ZH_3
+│   │   │   ├── GAUSSIAN.log+ZH_3
+│   │   │   ├── GAUSSIAN.log-ZH_4
+│   │   │   ├── GAUSSIAN.log+ZH_4
+│   │   │   ├── GAUSSIAN.log-ZO_1
+│   │   │   ├── GAUSSIAN.log+ZO_1
+│   │   │   ├── GAUSSIAN.wfn
+│   │   │   ├── GAUSSIAN.wfn-XC_2
+│   │   │   ├── GAUSSIAN.wfn+XC_2
+│   │   │   ├── GAUSSIAN.wfn-XH_3
+│   │   │   ├── GAUSSIAN.wfn+XH_3
+│   │   │   ├── GAUSSIAN.wfn-XH_4
+│   │   │   ├── GAUSSIAN.wfn+XH_4
+│   │   │   ├── GAUSSIAN.wfn-XO_1
+│   │   │   ├── GAUSSIAN.wfn+XO_1
+│   │   │   ├── GAUSSIAN.wfn-YC_2
+│   │   │   ├── GAUSSIAN.wfn+YC_2
+│   │   │   ├── GAUSSIAN.wfn-YH_3
+│   │   │   ├── GAUSSIAN.wfn+YH_3
+│   │   │   ├── GAUSSIAN.wfn-YH_4
+│   │   │   ├── GAUSSIAN.wfn+YH_4
+│   │   │   ├── GAUSSIAN.wfn-YO_1
+│   │   │   ├── GAUSSIAN.wfn+YO_1
+│   │   │   ├── GAUSSIAN.wfn-ZC_2
+│   │   │   ├── GAUSSIAN.wfn+ZC_2
+│   │   │   ├── GAUSSIAN.wfn-ZH_3
+│   │   │   ├── GAUSSIAN.wfn+ZH_3
+│   │   │   ├── GAUSSIAN.wfn-ZH_4
+│   │   │   ├── GAUSSIAN.wfn+ZH_4
+│   │   │   ├── GAUSSIAN.wfn-ZO_1
+│   │   │   └── GAUSSIAN.wfn+ZO_1
+│   │   ├── PLACZEK.INP
+│   │   ├── PLACZEK.OUT
+│   │   ├── PLACZEK.RST
+│   │   ├── QCISD-EDIPOL
+│   │   └── sum-terms.dat
+│   └── h2cs
+│       ├── GAUSSIAN.com
+│       ├── h2cs.com
+│       ├── h2cs-fv.com
+│       ├── h2cs-fv.log
+│       ├── h2cs-opt.com
+│       ├── h2cs-opt.log
+│       ├── h2cs.temp
+│       ├── HESSIAN
+│       ├── nohup.out
+│       ├── opt_coord.temp
+│       ├── opt_input.temp
+│       ├── OUTPUTS
+│       │   ├── EDIPOL
+│       │   ├── EDIPOL-XC_1
+│       │   ├── EDIPOL+XC_1
+│       │   ├── EDIPOL-XH_3
+│       │   ├── EDIPOL+XH_3
+│       │   ├── EDIPOL-XH_4
+│       │   ├── EDIPOL+XH_4
+│       │   ├── EDIPOL-XS_2
+│       │   ├── EDIPOL+XS_2
+│       │   ├── EDIPOL-YC_1
+│       │   ├── EDIPOL+YC_1
+│       │   ├── EDIPOL-YH_3
+│       │   ├── EDIPOL+YH_3
+│       │   ├── EDIPOL-YH_4
+│       │   ├── EDIPOL+YH_4
+│       │   ├── EDIPOL-YS_2
+│       │   ├── EDIPOL+YS_2
+│       │   ├── EDIPOL-ZC_1
+│       │   ├── EDIPOL+ZC_1
+│       │   ├── EDIPOL-ZH_3
+│       │   ├── EDIPOL+ZH_3
+│       │   ├── EDIPOL-ZH_4
+│       │   ├── EDIPOL+ZH_4
+│       │   ├── EDIPOL-ZS_2
+│       │   ├── EDIPOL+ZS_2
+│       │   ├── GAUSSIAN.log
+│       │   ├── GAUSSIAN.log-XC_1
+│       │   ├── GAUSSIAN.log+XC_1
+│       │   ├── GAUSSIAN.log-XH_3
+│       │   ├── GAUSSIAN.log+XH_3
+│       │   ├── GAUSSIAN.log-XH_4
+│       │   ├── GAUSSIAN.log+XH_4
+│       │   ├── GAUSSIAN.log-XS_2
+│       │   ├── GAUSSIAN.log+XS_2
+│       │   ├── GAUSSIAN.log-YC_1
+│       │   ├── GAUSSIAN.log+YC_1
+│       │   ├── GAUSSIAN.log-YH_3
+│       │   ├── GAUSSIAN.log+YH_3
+│       │   ├── GAUSSIAN.log-YH_4
+│       │   ├── GAUSSIAN.log+YH_4
+│       │   ├── GAUSSIAN.log-YS_2
+│       │   ├── GAUSSIAN.log+YS_2
+│       │   ├── GAUSSIAN.log-ZC_1
+│       │   ├── GAUSSIAN.log+ZC_1
+│       │   ├── GAUSSIAN.log-ZH_3
+│       │   ├── GAUSSIAN.log+ZH_3
+│       │   ├── GAUSSIAN.log-ZH_4
+│       │   ├── GAUSSIAN.log+ZH_4
+│       │   ├── GAUSSIAN.log-ZS_2
+│       │   ├── GAUSSIAN.log+ZS_2
+│       │   ├── GAUSSIAN.wfn
+│       │   ├── GAUSSIAN.wfn-XC_1
+│       │   ├── GAUSSIAN.wfn+XC_1
+│       │   ├── GAUSSIAN.wfn-XH_3
+│       │   ├── GAUSSIAN.wfn+XH_3
+│       │   ├── GAUSSIAN.wfn-XH_4
+│       │   ├── GAUSSIAN.wfn+XH_4
+│       │   ├── GAUSSIAN.wfn-XS_2
+│       │   ├── GAUSSIAN.wfn+XS_2
+│       │   ├── GAUSSIAN.wfn-YC_1
+│       │   ├── GAUSSIAN.wfn+YC_1
+│       │   ├── GAUSSIAN.wfn-YH_3
+│       │   ├── GAUSSIAN.wfn+YH_3
+│       │   ├── GAUSSIAN.wfn-YH_4
+│       │   ├── GAUSSIAN.wfn+YH_4
+│       │   ├── GAUSSIAN.wfn-YS_2
+│       │   ├── GAUSSIAN.wfn+YS_2
+│       │   ├── GAUSSIAN.wfn-ZC_1
+│       │   ├── GAUSSIAN.wfn+ZC_1
+│       │   ├── GAUSSIAN.wfn-ZH_3
+│       │   ├── GAUSSIAN.wfn+ZH_3
+│       │   ├── GAUSSIAN.wfn-ZH_4
+│       │   ├── GAUSSIAN.wfn+ZH_4
+│       │   ├── GAUSSIAN.wfn-ZS_2
+│       │   └── GAUSSIAN.wfn+ZS_2
+│       ├── PLACZEK.INP
+│       ├── PLACZEK.OUT
+│       ├── PLACZEK.RST
+│       ├── QCISD-EDIPOL
+│       ├── sum-terms.dat
+│       └── z_atoms.temp
+└── README
+
+
